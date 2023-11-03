@@ -100,13 +100,53 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 
 /***/ }),
 
+/***/ "./src/components/app.tsx":
+/*!********************************!*\
+  !*** ./src/components/app.tsx ***!
+  \********************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\nvar header_1 = __importDefault(__webpack_require__(/*! ./header */ \"./src/components/header.tsx\"));\nvar contest_list_1 = __importDefault(__webpack_require__(/*! ./contest-list */ \"./src/components/contest-list.tsx\"));\nvar App = function (_a) {\n    var initialData = _a.initialData;\n    return ((0, jsx_runtime_1.jsxs)(\"div\", { className: \"container\", children: [(0, jsx_runtime_1.jsx)(header_1.default, { message: \"Naming Contests\" }), (0, jsx_runtime_1.jsx)(contest_list_1.default, { initialContests: initialData.contests })] }));\n};\nexports[\"default\"] = App;\n\n\n//# sourceURL=webpack://mnr/./src/components/app.tsx?");
+
+/***/ }),
+
+/***/ "./src/components/contest-item.tsx":
+/*!*****************************************!*\
+  !*** ./src/components/contest-item.tsx ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+eval("\nvar __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    var desc = Object.getOwnPropertyDescriptor(m, k);\n    if (!desc || (\"get\" in desc ? !m.__esModule : desc.writable || desc.configurable)) {\n      desc = { enumerable: true, get: function() { return m[k]; } };\n    }\n    Object.defineProperty(o, k2, desc);\n}) : (function(o, m, k, k2) {\n    if (k2 === undefined) k2 = k;\n    o[k2] = m[k];\n}));\nvar __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {\n    Object.defineProperty(o, \"default\", { enumerable: true, value: v });\n}) : function(o, v) {\n    o[\"default\"] = v;\n});\nvar __importStar = (this && this.__importStar) || function (mod) {\n    if (mod && mod.__esModule) return mod;\n    var result = {};\n    if (mod != null) for (var k in mod) if (k !== \"default\" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);\n    __setModuleDefault(result, mod);\n    return result;\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\nvar React = __importStar(__webpack_require__(/*! react */ \"./node_modules/react/index.js\"));\nvar ContestItem = function (_a) {\n    var contest = _a.contest;\n    return ((0, jsx_runtime_1.jsxs)(\"div\", { className: \"contest-preview\", children: [(0, jsx_runtime_1.jsx)(\"div\", { className: \"category\", children: contest.categoryName }), (0, jsx_runtime_1.jsx)(\"div\", { className: \"contest\", children: contest.contestName })] }));\n};\nexports[\"default\"] = ContestItem;\n\n\n//# sourceURL=webpack://mnr/./src/components/contest-item.tsx?");
+
+/***/ }),
+
+/***/ "./src/components/contest-list.tsx":
+/*!*****************************************!*\
+  !*** ./src/components/contest-list.tsx ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+eval("\nvar __read = (this && this.__read) || function (o, n) {\n    var m = typeof Symbol === \"function\" && o[Symbol.iterator];\n    if (!m) return o;\n    var i = m.call(o), r, ar = [], e;\n    try {\n        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);\n    }\n    catch (error) { e = { error: error }; }\n    finally {\n        try {\n            if (r && !r.done && (m = i[\"return\"])) m.call(i);\n        }\n        finally { if (e) throw e.error; }\n    }\n    return ar;\n};\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\nvar contest_item_1 = __importDefault(__webpack_require__(/*! ./contest-item */ \"./src/components/contest-item.tsx\"));\nvar react_1 = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\nvar ContestList = function (_a) {\n    var initialContests = _a.initialContests;\n    //   debugger;\n    var _b = __read((0, react_1.useState)(initialContests), 2), contests = _b[0], setContests = _b[1];\n    (0, react_1.useEffect)(function () {\n        // fetchContests().then((contests) => {\n        //   setContests(contests);\n        // });\n    }, []);\n    return ((0, jsx_runtime_1.jsx)(\"div\", { className: \"contest-list\", children: contests.map(function (contest) {\n            return ((0, jsx_runtime_1.jsx)(contest_item_1.default, { contest: contest }, contest.id));\n        }) }));\n};\nexports[\"default\"] = ContestList;\n\n\n//# sourceURL=webpack://mnr/./src/components/contest-list.tsx?");
+
+/***/ }),
+
+/***/ "./src/components/header.tsx":
+/*!***********************************!*\
+  !*** ./src/components/header.tsx ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\nvar Header = function (_a) {\n    var message = _a.message;\n    return (0, jsx_runtime_1.jsx)(\"div\", { className: \"header\", children: message });\n};\nexports[\"default\"] = Header;\n\n\n//# sourceURL=webpack://mnr/./src/components/header.tsx?");
+
+/***/ }),
+
 /***/ "./src/index.tsx":
 /*!***********************!*\
   !*** ./src/index.tsx ***!
   \***********************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
 
-eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\nvar client_1 = __webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\");\nvar App = function () {\n    return (0, jsx_runtime_1.jsx)(\"div\", { children: \"Hello React\" });\n    //   return React.createElement(\"Div\", null, \"Hello React\");\n};\nvar container = document.getElementById(\"app\");\nvar root = (0, client_1.createRoot)(container);\nroot.render((0, jsx_runtime_1.jsx)(App, {}));\n\n\n//# sourceURL=webpack://mnr/./src/index.tsx?");
+eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar jsx_runtime_1 = __webpack_require__(/*! react/jsx-runtime */ \"./node_modules/react/jsx-runtime.js\");\nvar client_1 = __webpack_require__(/*! react-dom/client */ \"./node_modules/react-dom/client.js\");\nvar app_1 = __importDefault(__webpack_require__(/*! ./components/app */ \"./src/components/app.tsx\"));\nvar container = document.getElementById(\"app\");\nvar root = (0, client_1.createRoot)(container);\nroot.render((0, jsx_runtime_1.jsx)(app_1.default, { initialData: window.initialData }));\n\n\n//# sourceURL=webpack://mnr/./src/index.tsx?");
 
 /***/ })
 
@@ -130,7 +170,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar 
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
 /******/ 	
 /******/ 		// Flag the module as loaded
 /******/ 		module.loaded = true;
@@ -153,7 +193,7 @@ eval("\nObject.defineProperty(exports, \"__esModule\", ({ value: true }));\nvar 
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
 /******/ 	var __webpack_exports__ = __webpack_require__("./src/index.tsx");
 /******/ 	
 /******/ })()
