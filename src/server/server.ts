@@ -2,7 +2,9 @@ import express from "express";
 import os from "node:os";
 
 import config, { PORT } from "./config";
-console.log({ config });
+import apiRouter from "./api-router";
+
+// console.log({ config });
 
 const server = express();
 
@@ -10,7 +12,9 @@ server.use(express.static("dist"));
 
 server.set("view engine", "ejs");
 
-server.use("/", (req, res) => {
+server.use("/api", apiRouter);
+
+server.get("/", (req, res) => {
   //   res.send("Hello Express!");
   res.render("index", {
     initialContent: "Loading...",
