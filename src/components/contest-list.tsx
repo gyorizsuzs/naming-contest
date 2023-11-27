@@ -1,24 +1,39 @@
-import ContestItem from "./contest-item";
-import { useEffect, useState } from "react";
-import { fetchContests } from "../api-client";
+import { useEffect, useState } from 'react';
 
-const ContestList = ({ initialContests }) => {
-  //   debugger;
-  const [contests, setContests] = useState(initialContests);
+import { fetchContestList } from '../api-client';
+
+import ContestItem from './contest-item';
+import Header from './header';
+
+const ContestList = ({ initialContests, onContestClick }) => {
+  const [contests, setContests] = useState(
+    initialContests ?? [],
+  );
 
   useEffect(() => {
-    // fetchContests().then((contests) => {
-    //   setContests(contests);
-    // });
-  }, []);
+    if (!initialContests) {
+      fetchContestList().then((contests) => {
+        setContests(contests);
+      });
+    }
+  }, [initialContests]);
+
   return (
-    <div className="contest-list">
-      {contests.map((contest) => {
-        return (
-          <ContestItem key={contest.id} contest={contest} />
-        );
-      })}
-    </div>
+    <>
+      <Header message="Naming Contests" />
+
+      <div className="contest-list">
+        {contests.map((contest) => {
+          return (
+            <ContestItem
+              key={contest.id}
+              contest={contest}
+              onClick={onContestClick}
+            />
+          );
+        })}
+      </div>
+    </>
   );
 };
 
