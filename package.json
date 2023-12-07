@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "react-scripts build",
+    "build": "tsc",
     "dev:server": "tsnd src/server/server.ts",
     "dev:bundler": "webpack -w --mode=development"
   },
