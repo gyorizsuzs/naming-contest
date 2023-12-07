@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
+    "watch": "tsc -w",
     "dev:server": "tsnd src/server/server.ts",
     "dev:bundler": "webpack -w --mode=development"
   },
