@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc -p .",
+    "build": "tsc -b .",
     "watch": "tsc -w",
     "dev:server": "tsnd src/server/server.ts",
     "dev:bundler": "webpack -w --mode=development"
